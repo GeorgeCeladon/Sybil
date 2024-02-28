@@ -142,3 +142,6 @@ dmypy.json
 
 # Windows
 Thumbs.db
+
+Ignora file del Fork personale
+dicom/
