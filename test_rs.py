@@ -593,4 +593,17 @@ scores = model.predict([serie])
 # serie = Serie(['E:\LDCT_sybil\A2.orb.66e3.it.orbassano.S1.3968019.1_00001.DCM'], label=1)
 # results = model.evaluate([serie])
 
+results = model.predict([serie], return_attentions=True)
+attentions = results.attentions
 
+print(scores)
+
+
+from sybil import visualize_attentions
+
+series_with_attention = visualize_attentions(
+    series,
+    attentions = attentions,
+    save_directory = "./",
+    gain = 3, 
+)
